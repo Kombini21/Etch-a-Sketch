@@ -1,0 +1,23 @@
+.cell {
+
+    border: 1px solid black;
+    min-width: 20px;
+    min-height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+    background-color: none;
+}
+
+
+.colorn {
+
+
+    background-color: red;
+}
+
+
+.junt {
+
+    display: flex;
+    justify-content: center;
+}
