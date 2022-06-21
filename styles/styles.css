@@ -1,13 +1,3 @@
-.cell {
-
-    border: 1px solid black;
-    min-width: 20px;
-    min-height: 20px;
-    display: inline-block;
-    margin-right: 5px;
-    background-color: none;
-}
-
 
 .colorn {
 
@@ -33,3 +23,31 @@
 
     text-align: center;
 }
+
+
+body {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.midElements{
+
+    display: flex;
+    gap: 30vh;
+}
+
+.allButtons{
+
+    display: flex;
+    flex-direction: column;
+}
+
+.grid {
+    display: grid;
+    width: 450px;
+    height: 450px;
+    border: 1px solid gray;
+  }
+  
