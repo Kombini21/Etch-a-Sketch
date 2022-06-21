@@ -3,7 +3,7 @@ let container = document.getElementById("grid16");
 let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByClassName("cell");
 
-const COLOR_DEFAULT = "#333333";
+const COLOR_DEFAULT = "#121212";
 const MODE_DEFAULT = "color";
 const DEFAULT_SIZE = 16;
 
@@ -23,19 +23,39 @@ document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 colorPicker.oninput = (e) => setCurrentColor(e.target.value);
 sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value);
+sizeSlider.onchange = (e) => changeSize(e.target.value);
 
 function apagadorMode() {
 
     currentMode = "eraser";
 }
 
-function setCurrentColor(newColor) {
-    currentColor = newColor;
+function changeSize(value) {
+
+
+    setCurrentSize(value);
+    updateSizeValue(value);
+    cleanGrid();
 }
 
+function setCurrentSize(newSize) {
+
+    currentSize = newSize;
+    
+}
+
+function setCurrentColor(newColor) {
+    currentColor = newColor;
+    currentMode = "color";
+    
+}
+
+
 function cleanGrid() {
+
     grid.innerHTML = "";
-    createGrid(16);
+    createGrid(currentSize);
+
 }
 
 function createGrid(size) {
@@ -68,7 +88,7 @@ function updateSizeValue(value) {
 }
 
 window.onload = () => {
-    createGrid(16)
+    createGrid(DEFAULT_SIZE)
   }
 
 
